@@ -1,0 +1,222 @@
+* {
+    font-family: montserrat;
+}
+
+.carousel-item {
+    height: 100vh;
+    min-height: 300px;
+}
+
+.carousel-caption {
+    bottom: 220px;
+    z-index: 2;
+}
+
+.carousel-caption h5 {
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 25px;
+}
+
+.carousel-caption p {
+    width: 60%;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+.d-md-block {
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.carousel-caption a {
+    text-transform: uppercase;
+    text-decoration: none;
+    background: crimson;
+    display: inline-block;
+    color: #fff;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.carousel-inner::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.navbar .login {
+    background: rgb(89, 166, 253);
+    margin-left: 30px;
+    border-radius: 5px;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+    padding: .5rem 1rem;
+}
+
+.navbar .cadastro {
+    background: crimson;
+    margin-left: 30px;
+    border-radius: 5px;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+    padding: .5rem 1rem;
+}
+
+.navbar-nav a {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.navbar-light .navbar-brand {
+    color: #000;
+    font-size: 25px;
+    text-transform: bold;
+    letter-spacing: 2px;
+}
+
+.navbar-light .navbar-brand span {
+    color: #13a700;
+}
+
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
+    color: #000;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #000;
+}
+
+.w-100 {
+    height: 100vh;
+}
+
+.navbar-toggler {
+    padding: 1px 5px;
+    font-size: 18px;
+    line-height: 0.3;
+    background: #fff;
+}
+
+.modal-content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.modal-body {
+    padding: 0;
+}
+
+.btn-close {
+    position: absolute;
+    right: 0;
+    padding: 1em;
+}
+
+h1 {
+    font-size: 2.3em;
+    font-weight: bold;
+}
+
+.myform {
+    padding: 2em;
+    max-width: 100%;
+    color: #fff;
+    box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
+}
+
+.form-control:focus {
+    box-shadow: inset 0 -1px 0 #7e7e7e;
+}
+
+.form-control {
+    background-color: inherit;
+    color: #fff;
+    padding-left: 0;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #fff;
+}
+
+.myform .btn {
+    width: 100%;
+    font-weight: 800;
+    background-color: #fff;
+    border-radius: 0;
+    padding: 0.5em 0;
+}
+
+.myform .btn:hover {
+    background-color: inherit;
+    color: #fff;
+    border-color: #fff;
+}
+
+p {
+    text-align: center;
+    padding-top: 2em;
+    color: grey;
+}
+
+p a {
+    color: #e1e1e1;
+    text-decoration: none;
+}
+
+p a:hover {
+    color: #fff;
+}
+
+.promo-title1{
+
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 50px;
+}
+
+.imagem-sobre{
+
+    margin-top: 100px;
+    margin-left: 40px;
+}
+
+@media only screen and (max-width:767px) {
+    .navbar-nav {
+        text-align: center
+    }
+
+    .carousel-caption {
+        bottom: 165px
+    }
+
+    .carousel-caption h5 {
+        font-size: 17px
+    }
+
+    .carousel-caption a {
+        padding: 10px 15px
+    }
+}
+
+@media (max-width: 576px) {
+    .myform {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}

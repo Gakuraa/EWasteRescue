@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Consulta de pontos de coleta</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="style/usuario.css">
+
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#"><span>E-Waste</span>Rescue</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sobre.html">Sobre nós</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="servicos.html">Serviços</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Formulário de consulta de pontos de coleta -->
+  <form id="consulta-form" class="container mt-5">
+    <h2 class="text-center">Consultar Pontos de Coleta</h2>
+    <div class="mb-3">
+      <label for="localizacao" class="form-label">Localização:</label>
+      <input type="text" id="localizacao" name="localizacao" class="form-control" placeholder="Digite sua localização"
+        required>
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+  </form>
+
+  <!-- Resultados da consulta -->
+  <div id="resultados" class="container mt-5">
+    <h3>Resultados da Consulta</h3>
+    <ul id="pontos-coleta" class="list-group"></ul>
+  </div>
+
+  <!-- Detalhes do ponto de coleta -->
+  <div id="detalhes-ponto-coleta" class="container mt-5">
+    <h3>Detalhes do Ponto de Coleta</h3>
+    <div id="detalhes"></div>
+  </div>
+
+  <script src="https://unpkg.com/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+    integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+    integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+    crossorigin="anonymous"></script>
+  <script>
+    // Função para simular a busca de pontos de coleta
+    function buscarPontosColeta(localizacao) {
+      // Simulação de busca de pontos de coleta (dados reais em SP)
+      const pontosColeta = [
+        {
+          nome: "Recicla SP",
+          endereco: "Av. Paulista, 1234 - Bela Vista, São Paulo - SP",
+          horario: "Segunda a Sexta: 9h às 17h",
+          tipoLixoEletronico: "Celulares, tablets, computadores"
+        },
+        {
+          nome: "Ecoeletrônicos",
+          endereco: "Rua Augusta, 567 - Consolação, São Paulo - SP",
+          horario: "Segunda a Sábado: 8h às 18h",
+          tipoLixoEletronico: "TVs, impressoras, periféricos"
+        },
+        {
+          nome: "Recicle Já",
+          endereco: "Av. Faria Lima, 789 - Itaim Bibi, São Paulo - SP",
+          horario: "Segunda a Domingo: 10h às 20h",
+          tipoLixoEletronico: "Baterias, telefones, câmeras"
+        }
+      ];
+
+      // Limpa os resultados anteriores
+      document.getElementById("pontos-coleta").innerHTML = "";
+
+      // Exibe os resultados da busca
+      pontosColeta.forEach(ponto => {
+        const li = document.createElement("li");
+        li.classList.add("list-group-item");
+        li.innerHTML = `
+          <h4 class="mb-1">${ponto.nome}</h4>
+          <p class="mb-1"><strong>Endereço:</strong> ${ponto.endereco}</p>
+          <p class="mb-1"><strong>Horário de funcionamento:</strong> ${ponto.horario}</p>
+          <p class="mb-0"><strong>Tipo de lixo eletrônico aceito:</strong> ${ponto.tipoLixoEletronico}</p>
+        `;
+        document.getElementById("pontos-coleta").appendChild(li);
+      });
+    }
+
+    // Evento de envio do formulário
+    document.getElementById("consulta-form").addEventListener("submit", function (event) {
+      event.preventDefault(); // Evita o comportamento padrão do envio do formulário
+
+      const localizacao = document.getElementById("localizacao").value;
+
+      // Simula um tempo de carregamento
+      setTimeout(function () {
+        buscarPontosColeta(localizacao);
+      }, 1000);
+    });
+
+  </script>
+
+</body>
+
+</html>
